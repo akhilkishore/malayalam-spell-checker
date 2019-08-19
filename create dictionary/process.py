@@ -29,7 +29,8 @@ def getData():
 
 def main():
     words = getData()
-    model_ted = FastText(words, size=100, window=5, min_count=5, workers=4,sg=1)
+    model = FastText(words, size=100, window=5, min_count=5, workers=4,sg=1)
+    model.wv.save_word2vec_format('fastmodel.bin',binary=True)
 main()
 
 
